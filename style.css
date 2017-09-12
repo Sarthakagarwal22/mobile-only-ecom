@@ -188,7 +188,15 @@ border-color:#424242;
 .carousel-indicators{
   bottom: -11px;
 }
-
 .carousel-control.right,.left{
 background:none;
+color: #000;
+}
+.carousel-control.left{
+background:none;
+color: #000;
+}
+.carousel-control{
+  position: absolute;
+  top: 103%;
 }
