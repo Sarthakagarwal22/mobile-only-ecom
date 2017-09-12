@@ -1,0 +1,194 @@
+.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7{
+	padding: 2px;
+}
+body{
+  font-family: 'Lato', sans-serif;
+}
+.navbar{
+  background: none;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0,0)); 
+  border:none;
+  height: 9%;
+}
+#navbar{
+  position: static;
+}
+#navbar-image{
+    color: white;
+    top: 40%;
+    left: 46%;
+}
+#navbar-search{
+    position: relative;
+    bottom: 12px;
+    left: -10px;
+}
+#navbar-cart {
+    color: white;
+    right: -13px;
+}
+.label-success{
+    padding: 0.1em 0.4em 0.2em;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    position: relative;
+    top: -17px;
+    left: -13px;
+    box-shadow: 0px 2px 12px 2px black;
+}
+#name-background{
+  display: table-cell;
+  vertical-align: bottom;
+  bottom: -5px;
+  width: 100%;
+  height: 38%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0,0.85),rgba(0, 0, 0, 0.08));
+}
+#recipe_detail{
+  position: absolute;
+  bottom: 9px;
+}
+#recipe_image{
+  background-position: center;
+  background-size: cover; 
+  color: white;
+  overflow: hidden;
+}
+p{
+  line-height: 1.2;
+  margin:2px;
+}
+.row{
+  margin: 0
+}
+.btn-default{
+background: none;
+border:none;
+color: white;
+}
+.btn.focus, .btn:focus, .btn:hover {
+color: inherit;
+}
+.btn-bottom{
+  border-radius: 0px; 
+  padding: 10px;
+  font-size: 15px;
+}
+#footer-1{
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+#footer-1.open{
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+#footer-2{
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transition: .35s ease-in-out;
+  -moz-transition: .35s ease-in-out;
+  -o-transition: .35s ease-in-out;
+  transition: .35s ease-in-out;
+}
+#footer-2.open{
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  -o-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+.modal-open .modal {
+  overflow: hidden;
+}
+.modal-body{
+  max-height: 88vh; 
+  padding-bottom: 34px;
+  overflow-y: scroll;
+}
+.prod_row{
+  color:white;
+  background: #606060;
+  padding: 5px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.46);
+}
+.price{
+  pointer-events: none;
+  padding: 0;
+}
+.scroll{
+  height: 40px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.scroll a{
+  opacity: 0.5;
+  border-right:1px solid rgba(0,0,0,0.16);
+  padding:10px;
+}
+.scroll a:last-child{
+  border:none; 
+}
+.scroll .active{
+  opacity: 1;
+}
+.scroll1{
+  height: 40px;
+  white-space: nowrap;
+  overflow-x: scroll;
+}
+.scroll1 a{
+  opacity: 0.5;
+  border-right:1px solid rgba(0,0,0,0.16);
+  padding:10px;
+}
+.scroll1 a:last-child{
+  border:none; 
+}
+.scroll1 .active{
+  opacity: 1;
+}
+.fhr{
+  border: 0;
+  height: 70px;
+  width: 1px;
+  margin: 5px;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+}
+.rating{
+  height: 2px;
+  width: 75px;
+  background-color: #d4d4d4;
+  position: relative;
+  top: 7px;
+  margin:auto; 
+}
+.rate_btn{
+  background:#f7ae1d;
+  color: #fff; 
+}
+.carousel-inner .col-xs-5{
+  color: #a4a4a4;
+}
+.carousel-indicators li{
+border-color:#424242;
+}
+.carousel-indicators .active {
+  background-color: #424242;
+}
+.carousel-indicators{
+  bottom: -11px;
+}
+
+.carousel-control.right,.left{
+background:none;
+}

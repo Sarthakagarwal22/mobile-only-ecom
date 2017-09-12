@@ -1,0 +1,398 @@
+<html>
+<head>
+	<title>Category Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7{
+	padding: 2px;
+}
+body{
+  font-family: 'Lato', sans-serif;
+}
+.navbar{
+  background: none;
+  border:none;
+  height: 9%;
+}
+#navbar{
+  position: static;
+}
+.carousel-indicators{
+  bottom:-9px;
+}
+#navbar-image{
+    color: white;
+    top: 38%;
+    left: 46%;
+    font-size: 20px;
+}
+#navbar-search{
+    position: relative;
+    bottom: 12px;
+    left: -10px;
+}
+#navbar-cart {
+    color: white;
+    right: -13px;
+}
+#name-background{
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 60%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0,0.85),rgba(0, 0, 0, 0));
+}
+#recipe_detail{
+  position: absolute;
+  bottom: 9px;
+}
+.label-success{
+    padding: 0.1em 0.4em 0.2em;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    position: relative;
+    top: -17px;
+    left: -13px;
+    box-shadow: 0px 2px 12px 2px black;
+}
+#recipe_image{
+  overflow:hidden; 
+  color: white;
+}
+p{
+  line-height: 1.2;
+  margin:2px;
+}
+.row{
+  margin: 0
+}
+.scroll {
+  color: #606060;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.46);
+  background:black; 
+  white-space: nowrap;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar; 
+}
+.scroll a{
+  text-decoration: none;
+  font-size: 17px;
+  padding: 10px 10px 0px 10px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+a:hover,a:focus,a:active,.btn:hover,.btn:focus,.btn:active{
+  color:inherit;
+  outline-color: rgba(0,0,0,0);
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline:none; 
+}
+a.active{
+  color: white;
+  border-bottom: 3px solid #0b9444
+}
+
+.ripple{
+  position: absolute;
+  top:0; left:0; bottom:0; right:0;
+  overflow: hidden;
+  -webkit-transform: translateZ(0); /* to contain zoomed ripple */
+  transform: translateZ(0);
+  border-radius: inherit; /* inherit from parent (rounded buttons etc) */
+  pointer-events: none; /* allow user interaction */
+          animation: ripple-shadow 0.4s forwards;
+  -webkit-animation: ripple-shadow 0.4s forwards;
+}
+.rippleWave{
+  backface-visibility: hidden;
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0.7); -webkit-transform: scale(0.7);
+  background: rgba(255,255,255, 1);
+  opacity: 0.45;
+          animation: ripple 2s forwards;
+  -webkit-animation: ripple 2s forwards;
+}
+@keyframes ripple-shadow {
+  0%   {box-shadow: 0 0 0 rgba(0,0,0,0.0);}
+  20%  {box-shadow: 0 4px 16px rgba(0,0,0,0.3);}
+  100% {box-shadow: 0 0 0 rgba(0,0,0,0.0);}
+}
+@-webkit-keyframes ripple-shadow {
+  0%   {box-shadow: 0 0 0 rgba(0,0,0,0.0);}
+  20%  {box-shadow: 0 4px 16px rgba(0,0,0,0.3);}
+  100% {box-shadow: 0 0 0 rgba(0,0,0,0.0);}
+}
+@keyframes ripple {
+  to {transform: scale(24); opacity:0;}
+}
+@-webkit-keyframes ripple {
+  to {-webkit-transform: scale(24); opacity:0;}
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 10px;
+  margin: 0px 0 0px 5px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: -1px;
+  bottom: -4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
+}
+
+input:checked + .slider {
+  background-color: #11946b;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(25px);
+  -ms-transform: translateX(25px);
+  transform: translateX(25px);
+}
+
+.tab-pane{
+  margin-bottom: 44px;
+}
+
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-fixed-top">
+
+<div class="w3-display-container" id="navbar">
+<img src="images/image1.png" height="130px" style="width: 100%">  
+  <div class="w3-display-left w3-container" style="top:40%;left:-2%">
+    <a href="home.php">
+      <img src="images/arrow-back.png" width="30px">
+    </a>
+  </div>
+  <div class="w3-display-middle" id="navbar-image">
+    Shop-e-Holics
+  </div>
+  <div class="w3-display-right w3-container" id="navbar-cart">
+    <img src="images/search.png" width="30px" id="navbar-search">
+    <a href="cart.php">
+      <span class="glyphicon glyphicon-shopping-cart" style="font-size: 24px"></span>
+      <span class="label label-success">2</span>
+    </a>
+ </div>
+</div>
+
+<!-- MENU -->
+
+<div class="scroll">
+    <a class="active" data-ripple data-toggle="tab" href="#Offers"><i class="fa fa-tag" aria-hidden="true"> </i> Offers</a>
+    <a data-ripple data-toggle="tab" href="#home"><span class="glyphicon glyphicon-lamp"> </span> Home</a>
+    <a data-ripple data-toggle="tab" href="#elec"><i class="fa fa-mobile" aria-hidden="true" style="font-size: 23px"> </i> &nbsp;Electronics</a>
+    <a data-ripple data-toggle="tab" href="#Books"><i class="fa fa-book" aria-hidden="true"> </i> Books</a>
+    <a data-ripple data-toggle="tab" href="#TV"><i class="fa fa-television" aria-hidden="true"> </i> Television</a>
+</div>
+
+<!--SORT AND FILTER -->
+
+<div class="sort_filter" style="position:static;background:white;padding: 5px;box-shadow: 1px 1px 5px rgba(0,0,0,0.46);">
+  <div class="row">
+    <div class="col-xs-6 text-center" style="border-right: 1px solid #d4d4d4 ">
+      Sort<img src="images/sort.png" width="20px" style="margin:3px">
+    </div>
+    <div class="col-xs-6 text-center">
+      Filter<img src="images/filter.png" width="20px" style="margin:3px">
+    </div>
+  </div>
+</div>
+
+</nav>
+<div class="tab-content">
+
+  <div class="tab-pane fade active in" style="margin-top: 190px" id="Offers">
+    <div class="recipe">
+      <div class="w3-display-container" id="recipe_image" style="margin-top:2px">
+      <a href="index.php">
+        <center><img src="images/tv.jpeg" style="height:150px"></center>
+        <div class="w3-display-bottomleft w3-container" id="name-background">
+          <div id="recipe_detail">
+            <p style="font-size: 20px;font-family: 'Montserrat', sans-serif;"> &nbsp;Micromax 81cm (32) LED TV</p>
+            <p style="font-size: 16px;font-family: 'Montserrat', sans-serif;"> &nbsp;(32T8280HD /32T8260HD)</p>
+            <p class="text-center" style="font-size: 12px;font-family: 'Josefin Sans', sans-serif;"> &nbsp;SHOP Assured</p>
+          </div>
+        </div>
+      </a>
+       <div class="w3-display-topright w3-container" style="top:5px"><img class="like-button" src="images/like-button.png" width="33px"></div>
+      </div>
+      
+      <div class="row text-center add-to-cart-row" style="color: white;font-size: 13px">
+        <div class="col-xs-4" style="background:#f7941d;padding: 5px;font-size: 12px">
+          Add to WishList
+        </div>
+        
+        <div class="col-xs-4 text-center" style="background:#f7941d;padding: 4.5px;">
+          <b>₹25449/-</b><small><strike>28999/-</strike></small>
+        </div>
+        
+        <div class="col-xs-4 text-center" style="background:#0b9444;padding: 3px">  
+          <button class="btn add-to-cart-button" style="background:#0b9444;padding: 0px">Add to Cart</button>
+        </div>  
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-pane fade" style="margin-top: 190px" id="home">
+   Home
+  </div>
+
+  <div class="tab-pane fade" style="margin-top: 190px" id="elec">
+    Electronics
+  </div>
+
+  <div class="tab-pane fade" style="margin-top: 190px" id="Books">
+    Books
+  </div>
+
+  <div class="tab-pane fade" style="margin-top: 190px" id="TV">
+    TV
+  </div>
+
+</div>
+
+<div class="navbar-fixed-bottom"  id="footer-2" style="background:#0b9444;box-shadow:0px 7px 12px 3px black;color:white">
+  <div class="btn-group btn-group-justified" >
+    <div class="btn-group text-center" style="line-height: 1em">
+        <div class="row">
+          <div class="col-xs-6" style="padding-right: 0px">
+            <span class="glyphicon glyphicon-shopping-cart" style="font-size: 30px"></span>
+          </div>
+          <div class="col-xs-6" style="font-size: 13px;padding-left: 0px">
+            2 item(s) in cart
+          </div>
+        </div>
+    </div>
+    <div class="btn-group text-center">
+      <p>Total Price</p>
+      <b>₹30449/-</b>
+    </div>  
+    <div class="btn-group text-center ">  
+      <button class="btn btn-danger btn-bottom" style="padding:7px;width: 90%;border-radius: 7%">PROCEED</button>
+    </div>  
+  </div>
+</div>
+
+<script type="text/javascript">
+  
+  $(document).ready(function(){
+    $(".scroll a").on("click",function(){
+      $(".scroll a").removeClass("active");
+      $(this).addClass("active");
+    }); 
+    $(".add-to-cart-button").on("click",function(){
+        var parent = $(this).parent().parent(); 
+        parent.attr("title","Item Sucessfully Added!").attr('data-toggle', 'tooltip').tooltip({
+            trigger: 'manual'
+        }).tooltip('show');  
+        setTimeout(function(){
+            parent.tooltip('hide');
+        }, 2000);
+    });
+    $(document).on("mousedown", "[data-ripple]", function(e) {
+    
+    var $self = $(this);
+    
+    if($self.is(".btn-disabled")) {
+      return;
+    }
+    if($self.closest("[data-ripple]")) {
+      e.stopPropagation();
+    }
+    
+    var initPos = $self.css("position"),
+        offs = $self.offset(),
+        x = e.pageX - offs.left,
+        y = e.pageY - offs.top,
+        dia = Math.min(this.offsetHeight, this.offsetWidth, 100), // start diameter
+        $ripple = $('<div/>', {class : "ripple",appendTo : $self });
+    
+    if(!initPos || initPos==="static") {
+      $self.css({position:"relative"});
+    }
+    
+    $('<div/>', {
+      class : "rippleWave",
+      css : {
+        background: $self.data("ripple"),
+        width: dia,
+        height: dia,
+        left: x - (dia/2),
+        top: y - (dia/2),
+      },
+      appendTo : $ripple,
+      one : {
+        animationend : function(){
+          $ripple.remove();
+        }
+      }
+    });
+  });
+
+    var previousScroll = 0;
+  $(window).scroll(function(event){
+    var scroll = $(this).scrollTop(); 
+    
+    if (scroll > previousScroll){
+      $(".sort_filter").hide();
+    } 
+    else {
+      $(".sort_filter").show();
+    }
+   
+    previousScroll = scroll;
+   });
+  $()
+
+});
+</script>
+</body>
+</html>
