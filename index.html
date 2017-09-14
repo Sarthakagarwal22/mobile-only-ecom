@@ -302,8 +302,26 @@
 
             </div>
           </div>
-          <br>
-      <center><button class="btn rate_btn" >Rate this product</button></center>
+    <center style="margin-top: 5px;"><button class="btn rate_btn" >Rate this product</button>
+      <div class="rate_the_product">
+        <div class="stars">
+          <form action="">
+            <input class="star star-5 5" id="star-5" type="radio" name="star"/>
+            <label class="star star-5" for="star-5"></label>
+            <input class="star star-4 4" id="star-4" type="radio" name="star"/>
+            <label class="star star-4" for="star-4"></label>
+            <input class="star star-3 3" id="star-3" type="radio" name="star" checked/>
+            <label class="star star-3" for="star-3"></label>
+            <input class="star star-2 2" id="star-2" type="radio" name="star"/>
+            <label class="star star-2" for="star-2"></label>
+            <input class="star star-1 1" id="star-1" type="radio" name="star"/>
+            <label class="star star-1" for="star-1"></label>
+          </form>
+        </div>
+        <p id="star-count">3<i class="fa fa-star" aria-hidden="true"></i></p>
+        <textarea rows="4" cols="30" placeholder="Tell us something about the product..." ></textarea>
+      </div> 
+    </center>
       <br>
       <div>
         <div class="text-left" style="font-size: 12.5px">
@@ -427,6 +445,14 @@
         indx=-1 //if index exceeds total length of indicators present set it to -1
     $('.carousel-indicators li:nth-child('+(indx+2)+')').addClass('active');//set the respective indicator active
 });  
+    $('[name="star"]').on("click",function(){
+      var starClass = $(this).prop('class').split(" ");
+      $("#star-count").html(starClass[2]+'<i class="fa fa-star" aria-hidden="true"></i>');
+
+    });
+    $(".rate_btn").on("click",function(){
+      $(".rate_the_product").toggle(350);
+    });
   });
 </script>
 </body>
