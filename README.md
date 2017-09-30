@@ -4,8 +4,20 @@ A sleek UI with various features according to the need of the customer.The main 
 
 [Visit the page here](https://sarthakagarwal22.github.io/mobile-only-ecom/)
 
+How the Product Page Looks 
+
 ![Product Page Layout](screenshots/productpage.png "Basic Layout on Every Mobile")
 
 On clicking back icon on the top we view the category page
 
-![Category Page Layout](screenshots/categorypage.png "Basic Layout on Every Mobile")
+![Category Page Layout](screenshots/categorypage.png "Category Page Layout")
+
+On clicking the Description button on the product page we see this carousel
+
+![Description Carousel Style](screenshots/displaycarousel.png "Description Carousel Style")
+
+On clicking the Reviews button on the product page we see this design
+
+![Reviews Modal Style](screenshots/reviewsmodal.png "Reviews Modal Style")
+
+There are several other minial animations that helps in making the page feel better.
