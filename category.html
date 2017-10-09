@@ -381,7 +381,7 @@ input:checked + .slider:before {
     }); 
     
     $(".add-to-cart-row").on("click",function(){
-      var cube = $(this).parent().parent().parent();
+      var cube = $(this).parent().parent();
       cube.addClass("rotate").delay(1800).queue(function(){
           $(this).removeClass("rotate").dequeue();
       });
