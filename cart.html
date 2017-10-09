@@ -38,8 +38,10 @@ body{
   position: static;
 }
 #navbar-image{
-    top: 28%;
-    left: 50%;
+    color: white;
+    top: 38%;
+    left: 46%;
+    font-size: 20px;
 }
 #navbar-search{
     position: relative;
@@ -49,6 +51,11 @@ body{
 #navbar-cart {
     color: white;
     right: -13px;
+}
+.w3-display-left{
+  top:39%;
+  left: 1%;
+  width: 98%;
 }
 .label-success{
     padding: 0.1em 0.4em 0.2em;
@@ -91,21 +98,25 @@ color: inherit;
 <body>
 <nav class="navbar navbar-fixed-top">
   <div class="w3-display-container" id="navbar">
-    <div class="w3-display-left w3-container" style="top:40%;left:-2%">
-      <a href="category.php">
+    <div class="w3-display-left w3-container" style="top:40%;">
+      <a href="category.html">
         <img src="images/arrow-back.png" width="30px">
       </a>
     </div>
     <div class="w3-display-middle w3-large" id="navbar-image">
-      <img src="images/trans.png" style="width: 80%;">
+     Shop-e-Holic
     </div>
     <div class="w3-display-right w3-container" id="navbar-cart">
       <img src="images/search.png" width="24px" id="navbar-search">
-      <a href="../Cart.php">
+      <a href="cart.html">
         <span class="glyphicon glyphicon-shopping-cart" style="font-size: 24px"></span>
-        <span class="label label-success" ><?php echo $cart->total_items(); ?></span>
+        <span class="label label-success" >2</span>
       </a>
     </div>
+     <div class = "w3-display-left input-group" style="display: none;">
+    <input type = "text" class =" form-control">
+    <span class = "input-group-addon" style="cursor: pointer;">x</span>
+ </div>  
   </div>
 </nav>
 <div class="container-fluid">
@@ -178,10 +189,12 @@ color: inherit;
 </div>
 <script type="text/javascript">
   $(document).ready(function(){
-    $("")
-    $(".add-to-cart").on("click",function(){
-      $("#footer-1").addClass("open");
-      $("#footer-2").addClass("open");
+    $(".input-group-addon").on("click",function(){
+      $(this).parent().hide(200);
+    });
+
+    $("#navbar-search").on("click",function(){
+      $(".input-group").show(200);
     });
 
   });

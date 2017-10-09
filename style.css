@@ -15,8 +15,9 @@ body{
 }
 #navbar-image{
     color: white;
-    top: 40%;
+    top: 38%;
     left: 46%;
+    font-size: 20px;
 }
 #navbar-search{
     position: relative;
@@ -26,6 +27,11 @@ body{
 #navbar-cart {
     color: white;
     right: -13px;
+}
+.w3-display-left{
+  top:39%;
+  left: 1%;
+  width: 98%;
 }
 .label-success{
     padding: 0.1em 0.4em 0.2em;

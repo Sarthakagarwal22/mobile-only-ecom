@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-fixed-top">
   <div class="w3-display-container" id="navbar">
-    <div class="w3-display-left w3-container" style="top:40%;left:-2%">
+    <div class="w3-display-left w3-container" style="top:40%;">
       <a href="category.html">
         <img src="images/arrow-back.png" width="30px">
       </a>
@@ -24,11 +24,15 @@
     </div>
     <div class="w3-display-right w3-container" id="navbar-cart">
       <img src="images/search.png" width="24px" id="navbar-search">
-      <a href="cart.php">
+      <a href="cart.html">
         <span class="glyphicon glyphicon-shopping-cart" style="font-size: 24px"></span>
         <span class="label label-success">2</span>
       </a>
     </div>
+    <div class = "w3-display-left input-group" style="display: none;">
+     <input type = "text" class =" form-control">
+     <span class = "input-group-addon" style="cursor: pointer;">x</span>
+    </div>  
   </div>
 </nav>
 <div class="text-center tab-content">
@@ -452,6 +456,13 @@
     });
     $(".rate_btn").on("click",function(){
       $(".rate_the_product").toggle(350);
+    });
+    $(".input-group-addon").on("click",function(){
+      $(this).parent().hide(200);
+    });
+
+    $("#navbar-search").on("click",function(){
+      $(".input-group").show(200);
     });
   });
 </script>
