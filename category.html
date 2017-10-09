@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Category Page</title>
+  <title>Category Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 .col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7{
-	padding: 2px;
+  padding: 2px;
 }
 body{
   font-family: 'Lato', sans-serif;
@@ -55,6 +55,11 @@ body{
 #recipe_detail{
   position: absolute;
   bottom: 9px;
+}
+.w3-display-left{
+  top:38%;
+  left: 1%;
+  width: 98%;
 }
 .label-success{
     padding: 0.1em 0.4em 0.2em;
@@ -247,21 +252,28 @@ input:checked + .slider:before {
 
 <div class="w3-display-container" id="navbar">
 <img src="images/image1.png" height="130px" style="width: 100%">  
-  <div class="w3-display-left w3-container" style="top:40%;left:-2%">
+  <div class="w3-display-left w3-container" style="top:40%;">
     <a href="home.php">
       <img src="images/arrow-back.png" width="30px">
     </a>
   </div>
+
   <div class="w3-display-middle" id="navbar-image">
     Shop-e-Holics
   </div>
   <div class="w3-display-right w3-container" id="navbar-cart">
-    <img src="images/search.png" width="30px" id="navbar-search">
-    <a href="cart.html">
+    <img src="images/search.png" width="30px" id="navbar-search" style="cursor: pointer;">
+    <a href="cart.php">
       <span class="glyphicon glyphicon-shopping-cart" style="font-size: 24px"></span>
       <span class="label label-success">2</span>
     </a>
- </div>
+ </div> 
+ 
+ <div class = "w3-display-left input-group" style="display: none;">
+    <input type = "text" class =" form-control">
+    <span class = "input-group-addon" style="cursor: pointer;">x</span>
+ </div>  
+
 </div>
 
 <!-- MENU -->
@@ -293,7 +305,7 @@ input:checked + .slider:before {
   <div class="tab-pane fade active in" style="margin-top: 190px" id="Offers">
     <div class="recipe">
       <div class="w3-display-container" id="recipe_image" style="margin-top:2px">
-      <a href = "index.html" >
+      <a href="index.php">
         <center><img src="images/tv.jpeg" style="height:150px"></center>
         <div class="w3-display-bottomleft w3-container" id="name-background">
           <div id="recipe_detail">
@@ -315,7 +327,7 @@ input:checked + .slider:before {
             <b>₹25449/-</b><small><strike>28999/-</strike></small>
           </div>
           
-          <div class="col-xs-4 text-center add-to-cart-row" style="background:#319abd;padding: 3px">  
+          <div class="col-xs-4 text-center add-to-cart-col" style="background:#319abd;padding: 3px">  
             <button class="btn add-to-cart-button" style="background:#319abd;padding: 0px">Add to Cart</button>
           </div>  
         </div>
@@ -367,11 +379,22 @@ input:checked + .slider:before {
       <b>₹30449/-</b>
     </div>  
     <div class="btn-group text-center ">  
-      <a href="cart.html"><button class="btn btn-danger btn-bottom" style="background:#319abd;border-color:#319abd;padding:7px;width: 90%;border-radius: 7%">PROCEED</button></a>
+      <button class="btn btn-danger btn-bottom" style="background:#319abd;border-color:#319abd;padding:7px;width: 90%;border-radius: 7%">PROCEED</button>
     </div>  
   </div>
 </div>
-
+<div class="modal modal-lg fade" id="search-box" role="dialog" >
+    <div class="modal-dialog" style="position: relative;top:30%">
+        <div class="modal-content" style="background-color:rgba(0,0,0,0);border:none;box-shadow: none;background:#fff  ">
+            <div class="modal-body text-center">
+            <button class="close btn" style="font-size:15px;padding:3px 6px;opacity:1;margin-top: -9px;background:#fff;border-radius: 50%" data-dismiss="modal">&times;</button>
+                <div class="text-center">
+                  <input type="text" name="search" class="form-control" placeholder="Enter Search Keyword here">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
   
   $(document).ready(function(){
@@ -380,7 +403,7 @@ input:checked + .slider:before {
       $(this).addClass("active", 500);
     }); 
     
-    $(".add-to-cart-row").on("click",function(){
+    $(".add-to-cart-col").on("click",function(){
       var cube = $(this).parent().parent();
       cube.addClass("rotate").delay(1800).queue(function(){
           $(this).removeClass("rotate").dequeue();
@@ -440,7 +463,14 @@ input:checked + .slider:before {
    
     previousScroll = scroll;
    });
-  $()
+  
+  $(".input-group-addon").on("click",function(){
+    $(this).parent().hide(200);
+  });
+
+  $("#navbar-search").on("click",function(){
+    $(".input-group").show(200);
+  });
 
 });
 </script>
