@@ -23,13 +23,14 @@ body{
     position: relative;
     bottom: 12px;
     left: -10px;
+    cursor: pointer;
 }
 #navbar-cart {
     color: white;
     right: -13px;
 }
 .w3-display-left{
-  top:39%;
+  top:38%;
   left: 1%;
   width: 98%;
 }
