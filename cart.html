@@ -1,0 +1,190 @@
+<?php
+include ('../db/config.php');
+include '../cart1.php';
+$cart = new Cart;
+$query1 = mysqli_query($con, "SELECT shop_stat from grret_shopstat where id=1");
+$row1 = mysqli_fetch_array($query1);
+$shop_stat = $row1['shop_stat'];
+?>
+
+<html>
+<head>
+	<title>Product Page</title>
+	   <link rel="shortcut icon" type="image/png" href="images/GR111.png"/>
+    <title>GROCTAURANT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">
+.col-xs-2,.col-xs-10,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7{
+	padding: 2px;
+}
+body{
+  background:#edf1f4; 
+  position: fixed;
+  font-family: 'Lato', sans-serif;
+}
+.navbar{
+  background-color: #b92025; 
+  border:none;
+  height: 9%;
+}
+#navbar{
+  position: static;
+}
+#navbar-image{
+    top: 28%;
+    left: 50%;
+}
+#navbar-search{
+    position: relative;
+    bottom: 12px;
+    left: -18px;
+}
+#navbar-cart {
+    color: white;
+    right: -13px;
+}
+.label-success{
+    padding: 0.1em 0.4em 0.2em;
+    background: #fff;
+    color: #000;
+    border-radius: 50%;
+    position: relative;
+    top: -17px;
+    left: -13px;
+    box-shadow: 0px 2px 12px 2px black;
+}
+p{
+  line-height: 1.2;
+  margin:2px;
+}
+.row{
+  margin: 0;
+}
+.btn-default{
+background: none;
+border:none;
+color: white;
+}
+.btn.focus, .btn:focus, .btn:hover {
+color: inherit;
+}
+.cus_details{
+  background:white;
+  border-radius:3%;
+  margin-top: 5px;
+  width: 91vw;
+}
+.item_detail{
+  background:white; 
+  margin-top: 5px;
+  width: 91vw; 
+}
+</style>
+</head>
+<body>
+<nav class="navbar navbar-fixed-top">
+  <div class="w3-display-container" id="navbar">
+    <div class="w3-display-left w3-container" style="top:40%;left:-2%">
+      <a href="category.php">
+        <img src="images/arrow-back.png" width="30px">
+      </a>
+    </div>
+    <div class="w3-display-middle w3-large" id="navbar-image">
+      <img src="images/trans.png" style="width: 80%;">
+    </div>
+    <div class="w3-display-right w3-container" id="navbar-cart">
+      <img src="images/search.png" width="24px" id="navbar-search">
+      <a href="../Cart.php">
+        <span class="glyphicon glyphicon-shopping-cart" style="font-size: 24px"></span>
+        <span class="label label-success" ><?php echo $cart->total_items(); ?></span>
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+<div style="margin-top:65px;color:#6c6f74">
+  <p style="font-size: 10px;">YOUR DELIVERY DETAILS</p>
+</div>
+<div class="row cus_details" >
+  <div class="col-xs-2 text-center" style="padding: 7px">
+    <span class=" glyphicon glyphicon-user" style="color:#7d7d7d"></span>
+  </div>  
+  <div class="col-xs-10">
+    <input type="text" name="customer_name" id="customer_name" style="padding:3px;width:73vw;border:none;border-left: 1px solid #cacaca;">
+  </div>
+</div>
+
+<div class="row cus_details">
+  <div class="col-xs-2 text-center" style="padding: 7px">
+    <span class="glyphicon glyphicon-earphone" style="color:#7d7d7d"></span>
+  </div>  
+  <div class="col-xs-10">
+    <input type="number" name="customer_phone" id="customer_phone" style="padding:3px;width:73vw;border:none;border-left: 1px solid #cacaca;">
+  </div>
+</div>
+
+<div class="row cus_details">
+  <div class="col-xs-2 text-center" style="padding: 7px">
+    <span class="glyphicon glyphicon-globe" style="color:#7d7d7d"></span>
+  </div>  
+  <div class="col-xs-10">
+    <input type="text" name="customer_name" id="customer_name" style="padding:3px;width:73vw;border:none;border-left: 1px solid #cacaca;">
+  </div>
+</div>
+
+<p style="font-size: 10px;margin-top:10px">CART</p>
+  
+<div class="item_detail">
+  <div class="row">
+    <div class="col-xs-2 text-center">
+      <img src="images/non.png" width="25px">
+    </div>
+    <div class="col-xs-10" >
+       <p style="font-size: 15px;font-family: 'Montserrat', sans-serif;">Grilled Chicken Breast</p>
+    </div>
+  </div>  
+
+  <h6 class="col-xs-offset-2" style="font-size: 13px;padding-left: 5px">Serving : </h6>
+  <div class="row">    
+    <div class="col-xs-5">
+      <div class = "input-group">
+         <span class = "input-group-addon" style="background:#0b9444;color: white "><span class="glyphicon glyphicon-minus"></span></span>
+         <input type = "number" class ="form-control" value="1" readonly >
+         <span class = "input-group-addon" style="background:#0b9444;color: white "><span class="glyphicon glyphicon-plus"></span></span>
+      </div>
+    </div>
+    <div class="col-xs-4"  style="padding: 10px;font-size: 13px">
+      X ₹449/-
+    </div>
+    <div class="col-xs-3 text-right" style="padding: 10px;font-size: 13px">
+      ₹449/-
+    </div>
+  </div>
+</div>
+<li class="divider"></li>
+<div class="navbar-fixed-bottom text-center" style="background:#0b9444;box-shadow:0px 7px 12px 3px black;color:white;padding: 10px;">
+   Select Payment Method<span class="glyphicon glyphicon-chevron-right"></span>
+</div>
+
+
+
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("")
+    $(".add-to-cart").on("click",function(){
+      $("#footer-1").addClass("open");
+      $("#footer-2").addClass("open");
+    });
+
+  });
+</script>
+</body>
+</html>
