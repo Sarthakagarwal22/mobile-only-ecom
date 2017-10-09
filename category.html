@@ -217,9 +217,31 @@ input:checked + .slider:before {
   margin-bottom: 44px;
 }
 
+.cube {
+  transform-style: preserve-3d;
+  transform: translateZ(-150px) rotateX(0deg);
 }
+
+.rotate{
+  animation: example 1.7s ease 1;
+}
+
+.bottom {
+  transform: translateY(-15px) rotateX(270deg) rotateZ(0deg);
+}
+.front {
+  transform: translateZ(13px);
+}
+
+@keyframes example {
+  40% { transform: translateY(-15px) rotateX(90deg); }
+  80% { transform: translateY(-15px) rotateX(90deg); }
+  100% { transform: translateY(0px) rotateX(00deg); }
+}
+
 </style>
 </head>
+
 <body>
 <nav class="navbar navbar-fixed-top">
 
@@ -271,7 +293,7 @@ input:checked + .slider:before {
   <div class="tab-pane fade active in" style="margin-top: 190px" id="Offers">
     <div class="recipe">
       <div class="w3-display-container" id="recipe_image" style="margin-top:2px">
-      <a href="index.html">
+      <a href="index.php">
         <center><img src="images/tv.jpeg" style="height:150px"></center>
         <div class="w3-display-bottomleft w3-container" id="name-background">
           <div id="recipe_detail">
@@ -283,19 +305,29 @@ input:checked + .slider:before {
       </a>
        <div class="w3-display-topright w3-container" style="top:5px"><img class="like-button" src="images/like-button.png" width="33px"></div>
       </div>
-      
-      <div class="row text-center add-to-cart-row" style="color: white;font-size: 13px">
-        <div class="col-xs-4" style="background:#f7ae1d;padding: 5px;font-size: 12px">
-          Add to WishList
+    <div class="cube" style="color: white">    
+      <div class="front text-center add-to-cart row" style="font-size: 13px">
+          <div class="col-xs-4" style="background:#f7ae1d;padding: 5px;font-size: 12px">
+            Add to WishList
+          </div>
+          
+          <div class="col-xs-4 text-center" style="background:#e85934;padding: 4.5px;">
+            <b>₹25449/-</b><small><strike>28999/-</strike></small>
+          </div>
+          
+          <div class="col-xs-4 text-center" style="background:#319abd;padding: 3px">  
+            <button class="btn add-to-cart-button" style="background:#319abd;padding: 0px">Add to Cart</button>
+          </div>  
         </div>
-        
-        <div class="col-xs-4 text-center" style="background:#e85934;padding: 4.5px;">
-          <b>₹25449/-</b><small><strike>28999/-</strike></small>
+
+        <div class="bottom add-to-cart added-successfully row">
+          <div class="col-xs-10 text-center" style="background:#f7ae1d;padding: 5px;font-size: 12px">
+            Added Successfully
+          </div>
+          <div class="col-xs-2 text-center" style="background:#319abd;padding: 6.5px">
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </div>
         </div>
-        
-        <div class="col-xs-4 text-center" style="background:#319abd;padding: 3px">  
-          <button class="btn add-to-cart-button" style="background:#319abd;padding: 0px">Add to Cart</button>
-        </div>  
       </div>
     </div>
   </div>
@@ -347,15 +379,14 @@ input:checked + .slider:before {
       $(".scroll a").removeClass("active");
       $(this).addClass("active", 500);
     }); 
+    
     $(".add-to-cart-button").on("click",function(){
-        var parent = $(this).parent().parent(); 
-        parent.attr("title","Item Sucessfully Added!").attr('data-toggle', 'tooltip').tooltip({
-            trigger: 'manual'
-        }).tooltip('show');  
-        setTimeout(function(){
-            parent.tooltip('hide');
-        }, 2000);
+      var cube = $(this).parent().parent().parent();
+      cube.addClass("rotate").delay(1800).queue(function(){
+          $(this).removeClass("rotate").dequeue();
+      });
     });
+
     $(document).on("mousedown", "[data-ripple]", function(e) {
     
     var $self = $(this);
