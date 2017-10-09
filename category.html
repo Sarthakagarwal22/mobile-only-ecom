@@ -315,7 +315,7 @@ input:checked + .slider:before {
             <b>₹25449/-</b><small><strike>28999/-</strike></small>
           </div>
           
-          <div class="col-xs-4 text-center" style="background:#319abd;padding: 3px">  
+          <div class="col-xs-4 text-center add-to-cart-row" style="background:#319abd;padding: 3px">  
             <button class="btn add-to-cart-button" style="background:#319abd;padding: 0px">Add to Cart</button>
           </div>  
         </div>
@@ -380,7 +380,7 @@ input:checked + .slider:before {
       $(this).addClass("active", 500);
     }); 
     
-    $(".add-to-cart-button").on("click",function(){
+    $(".add-to-cart-row").on("click",function(){
       var cube = $(this).parent().parent().parent();
       cube.addClass("rotate").delay(1800).queue(function(){
           $(this).removeClass("rotate").dequeue();
