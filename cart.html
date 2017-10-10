@@ -1,16 +1,7 @@
-<?php
-include ('../db/config.php');
-include '../cart1.php';
-$cart = new Cart;
-$query1 = mysqli_query($con, "SELECT shop_stat from grret_shopstat where id=1");
-$row1 = mysqli_fetch_array($query1);
-$shop_stat = $row1['shop_stat'];
-?>
-
 <html>
 <head>
-	<title>Product Page</title>
-	   <link rel="shortcut icon" type="image/png" href="images/GR111.png"/>
+  <title>Product Page</title>
+     <link rel="shortcut icon" type="image/png" href="images/GR111.png"/>
     <title>GROCTAURANT</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,27 +12,32 @@ $shop_stat = $row1['shop_stat'];
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lato|Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style type="text/css">
-.col-xs-2,.col-xs-10,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7{
-	padding: 2px;
+.col-xs-2,.col-xs-10,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-3{
+  padding: 2px;
 }
 body{
   background:#edf1f4; 
   position: fixed;
   font-family: 'Lato', sans-serif;
 }
+.w3-display-left{
+  top: 47%;
+  left: 1%;
+  width: 98%;
+}
 .navbar{
   background-color: #b92025; 
   border:none;
-  height: 9%;
+  margin-bottom: 5px;
+  min-height: 40px;
 }
 #navbar{
   position: static;
 }
 #navbar-image{
     color: white;
-    top: 38%;
-    left: 46%;
-    font-size: 20px;
+    top: 47%;
+    left: 45%;
 }
 #navbar-search{
     position: relative;
@@ -52,18 +48,13 @@ body{
     color: white;
     right: -13px;
 }
-.w3-display-left{
-  top:39%;
-  left: 1%;
-  width: 98%;
-}
 .label-success{
     padding: 0.1em 0.4em 0.2em;
     background: #fff;
     color: #000;
     border-radius: 50%;
     position: relative;
-    top: -17px;
+    top: -13px;
     left: -13px;
     box-shadow: 0px 2px 12px 2px black;
 }
@@ -93,34 +84,48 @@ color: inherit;
   margin-top: 5px;
   width: 91vw; 
 }
+.total_price{
+  background-color: white;
+}
+.total_price .col-xs-5{
+  padding-top:9px;
+}
+.payment_method{
+  background:#0b9444;
+  box-shadow:0px 7px 12px 3px black;
+  color:white;
+  padding: 10px;
+}
+.conti_shop{
+  display: none;
+}
 </style>
 </head>
 <body>
 <nav class="navbar navbar-fixed-top">
   <div class="w3-display-container" id="navbar">
-    <div class="w3-display-left w3-container" style="top:40%;">
+    <div class="w3-display-left w3-container" style="top:40%;left:-2%">
       <a href="category.html">
         <img src="images/arrow-back.png" width="30px">
       </a>
     </div>
     <div class="w3-display-middle w3-large" id="navbar-image">
-     Shop-e-Holic
+      <h3>Shop-e-Holic</h3>
     </div>
     <div class="w3-display-right w3-container" id="navbar-cart">
       <img src="images/search.png" width="24px" id="navbar-search">
-      <a href="cart.html">
         <span class="glyphicon glyphicon-shopping-cart" style="font-size: 24px"></span>
         <span class="label label-success" >2</span>
-      </a>
     </div>
-     <div class = "w3-display-left input-group" style="display: none;">
-    <input type = "text" class =" form-control">
-    <span class = "input-group-addon" style="cursor: pointer;">x</span>
- </div>  
+    <div class = "w3-display-left input-group" style="display: none;">
+     <input type = "text" class =" form-control">
+     <span class = "input-group-addon search-icon" style="cursor: pointer;">x</span>
+    </div>  
   </div>
 </nav>
+
 <div class="container-fluid">
-<div style="margin-top:65px;color:#6c6f74">
+<div style="margin-top:53px;color:#6c6f74">
   <p style="font-size: 10px;">YOUR DELIVERY DETAILS</p>
 </div>
 <div class="row cus_details" >
@@ -146,50 +151,100 @@ color: inherit;
     <span class="glyphicon glyphicon-globe" style="color:#7d7d7d"></span>
   </div>  
   <div class="col-xs-10">
-    <input type="text" name="customer_name" id="customer_name" style="padding:3px;width:73vw;border:none;border-left: 1px solid #cacaca;">
+    <textarea type="text" rows="1" name="customer_name" id="customer_name" style="padding:3px;width:73vw;border:none;border-left: 1px solid #cacaca;"></textarea>
   </div>
 </div>
 
 <p style="font-size: 10px;margin-top:10px">CART</p>
-  
+
+<div class="conti_shop">
+<center><a href="category.html"><h6>Continue Shopping</h6></a></center>  
+</div>  
+
 <div class="item_detail">
   <div class="row">
-    <div class="col-xs-2 text-center">
-      <img src="images/non.png" width="25px">
+    <div class="col-xs-3 text-center" style="padding: 10px;">
+      <img src="images/tv.jpeg" width="70px">
     </div>
-    <div class="col-xs-10" >
-       <p style="font-size: 15px;font-family: 'Montserrat', sans-serif;">Grilled Chicken Breast</p>
+    <div class="col-xs-9">
+       <p style="font-size: 15px;font-family: 'Montserrat', sans-serif;">Micromax 81cm (32) LED TV</p>
+       <div class="row">
+          <div class="text-left col-xs-5">
+            <h6 style="font-size: 10px;">Shop Genuine</h6>
+          </div>
+          <div class="text-right col-xs-7">
+            <h6 style="font-size: 10px;">Delivery Charges : 0</h6>
+          </div>
+       </div>
     </div>
   </div>  
-
-  <h6 class="col-xs-offset-2" style="font-size: 13px;padding-left: 5px">Serving : </h6>
   <div class="row">    
     <div class="col-xs-5">
       <div class = "input-group">
-         <span class = "input-group-addon" style="background:#0b9444;color: white "><span class="glyphicon glyphicon-minus"></span></span>
-         <input type = "number" class ="form-control" value="1" readonly >
-         <span class = "input-group-addon" style="background:#0b9444;color: white "><span class="glyphicon glyphicon-plus"></span></span>
+         <span class = "input-group-addon delete-item" style="background:#0b9444;color: white "><span class="glyphicon glyphicon-minus"></span></span>
+         <input type = "number" class ="form-control text-center" value="1" readonly >
+         <span class = "input-group-addon add-item" style="background:#0b9444;color: white "><span class="glyphicon glyphicon-plus"></span></span>
       </div>
     </div>
-    <div class="col-xs-4"  style="padding: 10px;font-size: 13px">
-      X ₹449/-
+    <div class="col-xs-3"  style="padding-top: 10px;font-size: 13px">
+      X ₹24449/-
     </div>
-    <div class="col-xs-3 text-right" style="padding: 10px;font-size: 13px">
-      ₹449/-
+    <div class="col-xs-4 text-right" style="font-size: 13px;padding-top: 10px ">
+      ₹<span class="prod_price">24449</span>/-
+    </div>
+  </div> 
+</div>
+<hr>
+
+
+
+<div class="navbar-fixed-bottom">
+  <div class="row total_price text-center">
+    <div class="col-xs-7">
+      <h6>Total Payble Price</h6>
+    </div>
+    <div class="col-xs-5">
+      ₹<span class="cart_price">24449</span>/-
     </div>
   </div>
+  <div class="row text-center payment_method">
+     <div class="col-xs-12">Select Payment Method<span class="glyphicon glyphicon-chevron-right"></span></div>
+  </div>
 </div>
-<li class="divider"></li>
-<div class="navbar-fixed-bottom text-center" style="background:#0b9444;box-shadow:0px 7px 12px 3px black;color:white;padding: 10px;">
-   Select Payment Method<span class="glyphicon glyphicon-chevron-right"></span>
-</div>
-
 
 
 </div>
 <script type="text/javascript">
   $(document).ready(function(){
-    $(".input-group-addon").on("click",function(){
+    totalprice();
+
+    $(".add-item").on("click",function(){
+      $(this).prev().val( parseInt($(this).prev().val()) + 1 );
+      $(this).parent().parent().next().next().find("span").html( parseInt($(this).parent().parent().next().next().find("span").html()) * parseInt($(this).prev().val()) ) ;
+      totalprice();
+    });
+
+    $(".delete-item").on("click",function(){
+      
+      if($(this).next().val() != 1){
+          $(this).next().val( parseInt($(this).next().val()) - 1 );
+
+        $(this).parent().parent().next().next().find("span").html( parseInt($(this).parent().parent().next().next().find("span").html()) / (parseInt($(this).next().val())+1) ) ;
+        totalprice();
+      }
+      else{
+        if (confirm('Are you sure you want to delete this item?')) {
+            $(this).parent().parent().parent().parent().hide();
+            $(this).parent().parent().next().next().find("span").html("0");
+            totalprice();
+            $(".conti_shop").show();
+            } else {
+            
+            }
+      }
+    });
+
+    $(".search-icon").on("click",function(){
       $(this).parent().hide(200);
     });
 
@@ -197,6 +252,13 @@ color: inherit;
       $(".input-group").show(200);
     });
 
+    function totalprice() {
+      var val1 = 0;
+      $('.prod_price').each(function(){
+        val1 = val1 + parseInt($(this).html());
+      });
+      $(".cart_price").html(val1);
+    }
   });
 </script>
 </body>
