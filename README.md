@@ -6,7 +6,7 @@ A sleek UI with various features according to the need of the customer.The main 
 
 How the Product Page Looks 
 
-![Product Page Layout](screenshots/productpage.jpeg "Basic Layout on Every Mobile")
+![Product Page Layout](screenshots/productpage.jpeg "Basic Layout on Every Mobile" width="240px")
 
 On clicking back icon on the top we view the category page
 
