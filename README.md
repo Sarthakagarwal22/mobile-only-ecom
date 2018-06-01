@@ -20,6 +20,18 @@ On clicking the Reviews button on the product page we see this design
 
 ![Reviews Modal Style](screenshots/reviewsmodal.jpeg "Reviews Modal Style")
 
+On submitting the review it appends itself below the current reviews and the number of reviews and rating is updated
+
+![Custom Reviews](screenshots/customreview.jpeg "Custom Reviews")
+
+On Submitting a review or rating, the average review of the product is updated accordingly
+
+![Updated average review](screenshots/updatedreview.jpeg "Updated average review")
+
+The updated average review and number of review and rating is also updated on the front page
+
+![Updated index.html page ](screenshots/updatedfront.jpeg "Updated index.html page")
+
 On clicking the Cart Icon on any page or Buy Now on the product page we reach cart page
 
 ![Cart Page](screenshots/cart.jpeg "Cart Page")
