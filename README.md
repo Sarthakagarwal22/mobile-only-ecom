@@ -6,18 +6,23 @@ A sleek UI with various features according to the need of the customer.The main 
 
 How the Product Page Looks 
 
-![Product Page Layout](screenshots/productpage.png "Basic Layout on Every Mobile")
+![Product Page Layout](screenshots/productpage.jpeg "Basic Layout on Every Mobile")
 
 On clicking back icon on the top we view the category page
 
-![Category Page Layout](screenshots/categorypage.png "Category Page Layout")
+![Category Page Layout](screenshots/categorypage.jpeg "Category Page Layout")
 
 On clicking the Description button on the product page we see this carousel
 
-![Description Carousel Style](screenshots/displaycarousel.png "Description Carousel Style")
+![Description Carousel Style](screenshots/displaycarousel.jpeg "Description Carousel Style")
 
 On clicking the Reviews button on the product page we see this design
 
-![Reviews Modal Style](screenshots/reviewsmodal.png "Reviews Modal Style")
+![Reviews Modal Style](screenshots/reviewsmodal.jpeg "Reviews Modal Style")
+
+On clicking the Cart Icon on any page or Buy Now on the product page we reach cart page
+
+![Cart Page](screenshots/cart.jpeg "Cart Page")
+
 
 There are several other minial animations that helps in making the page feel better.
