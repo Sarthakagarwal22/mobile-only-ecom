@@ -87,7 +87,7 @@
 </div>
 </div>
 <div class="text-center" style="margin: 10px;font-size: 12px;">
-  <p>Rating &nbsp;<span style="background-color:#28b313;color: white;font-size: 10px;padding: 1px 7px 1px 7px">4.3 <span class="glyphicon glyphicon-star-empty"></span></span> 1511 Ratings & 386 reviews</p>
+  <p class="total_rate_main" >Rating &nbsp;<span style="background-color:#28b313;color: white;font-size: 10px;padding: 1px 7px 1px 7px">4.14 <span class="glyphicon glyphicon-star-empty"></span></span> 1511 Ratings & 386 reviews</p>
 </div>
 <div class="w3-display-container container-fluid" style="font-size: 18px;margin-top: 0">
   <div class="w3-display-topleft w3-container"><span style="font-size:28vh;line-height:0.7em;opacity:0.1">❝</span></div>
@@ -258,8 +258,8 @@
       <div class="modal-body text-center" >
           <div class="row">
             <div class="col-xs-5">
-              <h4>4.1 <span class="glyphicon glyphicon-star"></span></h4>
-              <p style="font-size: 12px">1511 Ratings and 386 Reviews</p>
+              <h4 id="final_rate" >4.14 <span class="glyphicon glyphicon-star"></span></h4>
+              <p id="total_rate" style="font-size: 12px">1511 Ratings and 386 Reviews</p>
             </div>
             <div class="col-xs-2">
               <hr class="fhr">
@@ -270,14 +270,14 @@
               <div class="rating"> 
               <div style="width: 100%;background:#02e202;height:2px"> </div>
               </div>
-              <span style="font-size: 10px;float:right;"> 760</span>
+              <span id="rate_5" style="font-size: 10px;float:right;"> 760</span>
               </div>
               <div style="margin-top: 14px">
               <p style="font-size: 10px;float: left">4 <span class="glyphicon glyphicon-star"> </span></p>
               <div class="rating"> 
-              <div style="width: calc(435%/7.60);background:#34e202;height:2px"> </div>
+              <div style="width: calc(453%/7.6);background:#34e202;height:2px"> </div>
               </div>
-              <span style="font-size: 10px;float: right;"> 453</span>
+              <span id="rate_4" style="font-size: 10px;float: right;"> 453</span>
               </div>
               
               <div style="margin-top: 14px">
@@ -285,7 +285,7 @@
               <div class="rating"> 
               <div style="width: calc(152%/7.6);background:#9ce202;height:2px"> </div>
               </div>
-              <span style="font-size: 10px;float: right;"> 152</span>
+              <span id="rate_3" style="font-size: 10px;float: right;"> 152</span>
               </div>
               
               <div style="margin-top: 14px">
@@ -293,7 +293,7 @@
               <div class="rating"> 
               <div style="width: calc(37%/7.6);background:#e2e002;height:2px"> </div>
               </div>
-              <span style="font-size: 10px;float: right;">37</span>
+              <span id="rate_2" style="font-size: 10px;float: right;">37</span>
               </div>             
               
               <div style="margin-top: 14px">
@@ -301,7 +301,7 @@
               <div class="rating"> 
               <div style="width: calc(109%/7.6);background:#ff0000;height:2px"> </div>
               </div>
-              <span style="font-size: 10px;float: right;"> 109</span>
+              <span id="rate_1" style="font-size: 10px;float: right;"> 109</span>
               </div>
 
             </div>
@@ -331,15 +331,8 @@
       <br>
       <div class="review_list">
         <div class="text-left" style="font-size: 12.5px">
-         <span style="background-color:#00bd00;color: #333333;font-size: 10px;padding: 1px 7px 1px 7px">5 <span class="glyphicon glyphicon-star"></span></span>
-         <p style="color: #404040">
-          first I want to tell as usual flipkart delivery service is so fast on next day delivery
-          Its first time when I go with micromax led tv, and the tv is so much good.
-          screen quality is good, sounds good,
-          clear and noise reduction sound, low battery consumption usage, screen clarity and color is beautiful,
-          really a great experience to having it.
-          satisfied now...
-          one more thing it's packaging is so good
+         <span style="background-color:#00bd00;color: #333333;font-size: 10px;padding: 1px 7px 1px 7px">5 <span class="glyphicon glyphicon-star"></span></span><br>
+         <p style="border-width: 0;color: #040404;">first I want to tell as usual flipkart delivery service is so fast on next day delivery.Its first time when I go with micromax led tv, and the tv is so much good.screen quality is good, sounds good,clear and noise reduction sound, low battery consumption usage, screen clarity and color is beautiful,really a great experience to having it.satisfied now...one more thing it's packaging is so good.">
          </p>
          <hr style="margin:10px 0">
         </div>
@@ -479,9 +472,10 @@
     });
 
     $(".submit_btn").on("click",function(){
+        var number_rate = $("#total_rate").html().split(" ");
         var review = $(".review_text").prop('value');
-        if(review){
         var star = $("#star-count").html().split(" ")[0];
+        if(review){
         if(star === '5' ){
           var color = "#00bd00" ;
           }
@@ -500,10 +494,23 @@
         $(".review_list").append(`<div class="text-left" style="font-size: 12.5px"> <span style="background-color:${color};color: #333333;font-size: 10px;padding: 1px 7px 1px 7px">${star}<span class="glyphicon glyphicon-star"></span></span><p style="color:#404040">${review}</p><hr style="margin:10px 0"></div>`);
 
         $(".review_text").val("");
+        number_rate[3]++;
       }
-      else{
-        window.alert("Please Fill the review field");
-      }
+        $(`#rate_${star}`).html(parseInt($(`#rate_${star}`).html())+1);
+        var width = (parseInt($(`#rate_${star}`).html()*100))/ parseInt($(`#rate_5`).html());
+        $(`#rate_${star}`).prev().children().css("width",`${width}%`);
+        number_rate[0]++;
+        var tot = 0;
+        for(i=1;i<=5;i++){
+          tot = tot + i*parseInt($(`#rate_${i}`).html());
+        }
+        avg = tot/parseInt(number_rate[0]);
+        $("#final_rate").html(`${avg.toFixed(2)} <span class="glyphicon glyphicon-star"></span>`);
+        $("#total_rate").html(`${number_rate[0]} ratings and ${number_rate[3]} reviews`);
+        $(".total_rate_main").html(`Rating &nbsp;<span style="background-color:#28b313;color: white;font-size: 10px;padding: 1px 7px 1px 7px">${avg.toFixed(2)} <span class="glyphicon glyphicon-star-empty"></span></span> ${number_rate[0]} Ratings & ${number_rate[3]} reviews`);
+        $(".rate_the_product").hide(350);
+        $(".rate_btn").delay(350).html("Rate this product");
+        x=0;
     });
   });
 
