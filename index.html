@@ -306,30 +306,32 @@
 
             </div>
           </div>
-    <center style="margin-top: 5px;"><button class="btn rate_btn" >Rate this product</button>
-      <div class="rate_the_product">
-        <div class="stars">
-          <form action="">
-            <input class="star star-5 5" id="star-5" type="radio" name="star"/>
-            <label class="star star-5" for="star-5"></label>
-            <input class="star star-4 4" id="star-4" type="radio" name="star"/>
-            <label class="star star-4" for="star-4"></label>
-            <input class="star star-3 3" id="star-3" type="radio" name="star" checked/>
-            <label class="star star-3" for="star-3"></label>
-            <input class="star star-2 2" id="star-2" type="radio" name="star"/>
-            <label class="star star-2" for="star-2"></label>
-            <input class="star star-1 1" id="star-1" type="radio" name="star"/>
-            <label class="star star-1" for="star-1"></label>
-          </form>
-        </div>
-        <p id="star-count">3<i class="fa fa-star" aria-hidden="true"></i></p>
-        <textarea rows="4" cols="30" placeholder="Tell us something about the product..." ></textarea>
-      </div> 
+    <center style="margin-top: 5px;">
+      <button class="btn rate_btn" >Rate this product</button>
+        <div class="rate_the_product">
+          <div class="stars">
+            <form action="">
+              <input class="star star-5 5" id="star-5" type="radio" name="star"/>
+              <label class="star star-5" for="star-5"></label>
+              <input class="star star-4 4" id="star-4" type="radio" name="star"/>
+              <label class="star star-4" for="star-4"></label>
+              <input class="star star-3 3" id="star-3" type="radio" name="star" checked/>
+              <label class="star star-3" for="star-3"></label>
+              <input class="star star-2 2" id="star-2" type="radio" name="star"/>
+              <label class="star star-2" for="star-2"></label>
+              <input class="star star-1 1" id="star-1" type="radio" name="star"/>
+              <label class="star star-1" for="star-1"></label>
+            </form>
+          </div>
+            <p id="star-count">3 <i class="fa fa-star" aria-hidden="true"></i></p>
+            <textarea class="review_text" rows="4" cols="30" placeholder="Tell us something about the product..." ></textarea><br><br>
+            <button class="btn submit_btn">Submit Review</button>
+        </div> 
     </center>
       <br>
-      <div>
+      <div class="review_list">
         <div class="text-left" style="font-size: 12.5px">
-         <span style="background-color:#28b313;color: white;font-size: 10px;padding: 1px 7px 1px 7px">5 <span class="glyphicon glyphicon-star"></span></span> <b> Best Product in the Market!</b>
+         <span style="background-color:#00bd00;color: #333333;font-size: 10px;padding: 1px 7px 1px 7px">5 <span class="glyphicon glyphicon-star"></span></span>
          <p style="color: #404040">
           first I want to tell as usual flipkart delivery service is so fast on next day delivery
           Its first time when I go with micromax led tv, and the tv is so much good.
@@ -421,6 +423,7 @@
 
 <script type="text/javascript">
   $(document).ready(function(){
+    var x=0;
     $(".add-to-cart").on("click",function(){
       $("#footer-1").addClass("open");
       $("#footer-2").addClass("open");
@@ -451,11 +454,20 @@
 });  
     $('[name="star"]').on("click",function(){
       var starClass = $(this).prop('class').split(" ");
-      $("#star-count").html(starClass[2]+'<i class="fa fa-star" aria-hidden="true"></i>');
+      $("#star-count").html(starClass[2]+' <i class="fa fa-star" aria-hidden="true"></i>');
 
     });
     $(".rate_btn").on("click",function(){
-      $(".rate_the_product").toggle(350);
+      if(x == 0){
+      $(".rate_the_product").show(350);
+      $(".rate_btn").html("Close Review");
+      x=1;
+      }
+      else{
+        $(".rate_the_product").hide(350);
+        $(".rate_btn").delay(350).html("Rate this product");
+        x=0;
+      }
     });
     
     $(".input-group-addon").on("click",function(){
@@ -465,7 +477,36 @@
     $("#navbar-search").on("click",function(){
       $(".input-group").show(200);
     });
+
+    $(".submit_btn").on("click",function(){
+        var review = $(".review_text").prop('value');
+        if(review){
+        var star = $("#star-count").html().split(" ")[0];
+        if(star === '5' ){
+          var color = "#00bd00" ;
+          }
+        else if(star === '4' ){
+          var color = "#34e202";
+        }
+        else if(star === '3' ){
+          var color = "#9ce202";
+        }
+        else if(star === '2' ){
+          var color = "#e2e002" ; 
+        }
+        else if(star === '1'){
+          var color = "#ea0505" ;
+        }
+        $(".review_list").append(`<div class="text-left" style="font-size: 12.5px"> <span style="background-color:${color};color: #333333;font-size: 10px;padding: 1px 7px 1px 7px">${star}<span class="glyphicon glyphicon-star"></span></span><p style="color:#404040">${review}</p><hr style="margin:10px 0"></div>`);
+
+        $(".review_text").val("");
+      }
+      else{
+        window.alert("Please Fill the review field");
+      }
+    });
   });
+
 </script>
 </body>
 </html>

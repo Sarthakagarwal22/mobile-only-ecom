@@ -252,9 +252,13 @@ label.star:before {
   border: none;
   margin-bottom: 5px; 
 }
-.rate_btn.focus, .rate_btn:focus, .rate_btn:hover {
+.rate_btn.focus, .rate_btn:focus, .rate_btn:hover,.submit_btn:focus,.submit_:hover {
     color: white;
 }
 .rate_the_product{
   display: none;
+}
+.submit_btn{
+  background-color:#31708f;
+  color: white;
 }
