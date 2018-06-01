@@ -187,7 +187,7 @@ color: inherit;
       </div>
     </div>
     <div class="col-xs-3"  style="padding-top: 10px;font-size: 13px">
-      X ₹24449/-
+      X ₹<span>24449/-</span>
     </div>
     <div class="col-xs-4 text-right" style="font-size: 13px;padding-top: 10px ">
       ₹<span class="prod_price">24449</span>/-
@@ -216,21 +216,19 @@ color: inherit;
 </div>
 <script type="text/javascript">
   $(document).ready(function(){
-    totalprice();
+    // totalprice();
 
     $(".add-item").on("click",function(){
       $(this).prev().val( parseInt($(this).prev().val()) + 1 );
-      $(this).parent().parent().next().next().find("span").html( parseInt($(this).parent().parent().next().next().find("span").html()) * parseInt($(this).prev().val()) ) ;
+      $(this).parent().parent().next().next().find("span").html( parseInt($(this).parent().parent().next().find("span").html()) * parseInt($(this).prev().val())) ;
       totalprice();
     });
 
     $(".delete-item").on("click",function(){
-      
       if($(this).next().val() != 1){
           $(this).next().val( parseInt($(this).next().val()) - 1 );
-
-        $(this).parent().parent().next().next().find("span").html( parseInt($(this).parent().parent().next().next().find("span").html()) / (parseInt($(this).next().val())+1) ) ;
-        totalprice();
+        	$(this).parent().parent().next().next().find("span").html(parseInt($(this).parent().parent().next().next().find("span").html()) - parseInt($(this).parent().parent().next().find("span").html()));
+        	totalprice();
       }
       else{
         if (confirm('Are you sure you want to delete this item?')) {
