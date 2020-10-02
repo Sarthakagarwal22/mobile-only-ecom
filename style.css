@@ -34,6 +34,233 @@ body{
   left: 1%;
   width: 98%;
 }
+.w3-display-left:first {
+  top: 40%;
+}
+
+.w3-container .glyphicon-shopping-cart {
+  font-size: 24px;
+}
+
+.input-group {
+  display: none;
+}
+
+.input-group-addon {
+  cursor: pointer;
+}
+
+.like-button {
+  width: 33px;
+  position: absolute;
+  top: 76px;
+  right: 2%;
+}
+
+.pic-gallery img {
+  height: 200px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.product-code {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.delivery-charges {
+  font-size: 12px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.reviews-specs-buttons {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+.reviews-specs-buttons > div {
+  cursor: pointer;
+}
+.reviews-specs-buttons .specs-button {
+  background: #a3715e;
+}
+
+.product-rating {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.total_rate_main > span {
+  background-color: #28b313;
+  color: white;
+  font-size: 10px;
+  padding: 1px 7px;
+}
+
+.product-description {
+  font-size: 18px;
+  margin-top: 0;
+}
+.product-description .w3-display-topleft span {
+  font-size: 28vh;
+  line-height: 0.7em;
+  opacity: 0.1;
+}
+.product-description .w3-display-bottomright {
+  bottom: -19px;
+}
+.product-description .w3-display-bottomright span {
+  font-size: 28vh;
+  line-height: 0.6em;
+  opacity: 0.1;
+  float: right;
+}
+
+#specs {
+  position: fixed;
+}
+.modal .modal-content {
+  padding: 0;
+  background:#fff;
+}
+.modal .modal-header {
+  background:#fff;
+  height: 8vh;
+}
+.modal h3,
+.modal h5 {
+  margin: 2px;
+}
+#specs .modal-footer {
+  padding: 10px;
+}
+
+#total_rate {
+  font-size: 12px;
+}
+
+.rating-stars > div {
+  margin-top: 14px;
+}
+.rating-stars > div:first {
+  margin-top: 0;
+}
+.rating-stars p {
+  font-size: 10px;
+  float: left;
+}
+.rating-stars span {
+  font-size: 10px;
+  float: right;
+}
+.rating-stars .rating > div {
+  height: 2px;
+}
+.rating-stars .rate-5 > div {
+  width: 100%;
+  background:#02e202;
+}
+.rating-stars .rate-4 > div {
+  width: calc(453%/7.6);
+  background:#34e202;
+}
+.rating-stars .rate-3 > div {
+  width: calc(152%/7.6);
+  background:#9ce202;
+}
+.rating-stars .rate-2 > div {
+  width: calc(37%/7.6);
+  background:#e2e002;
+}
+.rating-stars .rate-1 > div {
+  width: calc(109%/7.6);
+  background:#ff0000;
+}
+
+.review_list .text-left {
+  font-size: 12.5px;
+}
+.review_list .text-left > span {
+  background-color:#00bd00;
+  color: #333333;
+  font-size: 10px;
+  padding: 1px 7px;
+}
+.review_list .text-left > p {
+  border-width: 0;
+  color: #040404;
+}
+.review_list .text-left hr {
+  margin: 10px 0;
+}
+
+#pic-gallery .modal-dialog {
+  position: relative;
+  top: 30%;
+}
+#pic-gallery .modal-content {
+  border: none;
+  box-shadow: none;
+  background:#fff;
+}
+#pic-gallery .modal-content button.close {
+  font-size: 15px;
+  padding: 3px 6px;
+  opacity: 1;
+  margin-top: -9px;
+  background:#fff;
+  border-radius: 50%;
+}
+#pic-gallery .modal-content .scroll1 {
+  margin-top: 20px;
+}
+
+.navbar-fixed-bottom #footer-1 {
+  background:#e85934;
+  color:white;
+}
+.navbar-fixed-bottom .add-to-cart {
+  background:#f7ae1d;
+}
+.navbar-fixed-bottom .price p {
+  font-size: 12px;
+  color: black;
+}
+.navbar-fixed-bottom .price p strike {
+  color: white;
+}
+.navbar-fixed-bottom .cart {
+  background:#319abd;
+  color: white;
+}
+#footer-2 {
+  background:#f7ae1d;
+  box-shadow:0px 7px 12px 3px black;
+  color:white;
+  padding: 4px 0;
+}
+#footer-2 .text-center {
+  line-height: 1em;
+}
+#footer-2 .text-center .col-xs-6:first {
+  padding-right: 0;
+}
+#footer-2 .text-center .col-xs-6 .glyphicon-shopping-cart {
+  font-size: 30px;
+}
+#footer-2 .text-center .col-xs-6:last-of-type {
+  font-size: 13px;
+  padding-left: 0;
+}
+#footer-2 .btn-proceed {
+  background:#319abd;
+  padding: 7px;
+  width: 90%;
+  border-radius: 7%;
+}
+
 .label-success{
     padding: 0.1em 0.4em 0.2em;
     background: #fff;
@@ -181,7 +408,8 @@ color: inherit;
 }
 .rate_btn{
   background:#f7ae1d;
-  color: #fff; 
+  color: #fff;
+  margin-top: 5px;
 }
 .carousel-inner .col-xs-5{
   color: #a4a4a4;

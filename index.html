@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-fixed-top">
   <div class="w3-display-container" id="navbar">
-    <div class="w3-display-left w3-container" style="top:40%;">
+    <div class="w3-display-left w3-container">
       <a href="category.html">
         <img src="images/arrow-back.png" width="30px">
       </a>
@@ -25,35 +25,35 @@
     <div class="w3-display-right w3-container" id="navbar-cart">
       <img src="images/search.png" width="24px" id="navbar-search">
       <a href="cart.html">
-        <span class="glyphicon glyphicon-shopping-cart" style="font-size: 24px"></span>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
         <span class="label label-success">2</span>
       </a>
     </div>
-    <div class = "w3-display-left input-group" style="display: none;">
-     <input type = "text" class =" form-control">
-     <span class = "input-group-addon" style="cursor: pointer;">x</span>
+    <div class = "w3-display-left input-group">
+     <input type = "text" class = "form-control">
+     <span class = "input-group-addon">x</span>
     </div>  
   </div>
 </nav>
-<div class="text-center tab-content">
+<div class="text-center tab-content pic-gallery">
   <div class="tab-pane fade active in" id="Offers">
-  <img src="images/tv.jpeg" data-toggle="modal" data-target="#pic-gallery" height="200px">
+  <img src="images/tv.jpeg" data-toggle="modal" data-target="#pic-gallery" />
   </div>
 
   <div class="tab-pane fade" id="fashion">
-   <img src="images/tv1.jpeg" data-toggle="modal" data-target="#pic-gallery" height="200px">
+   <img src="images/tv1.jpeg" data-toggle="modal" data-target="#pic-gallery" />
   </div>
 
   <div class="tab-pane fade" id="elec">
- <img src="images/tv2.jpeg" data-toggle="modal" data-target="#pic-gallery" height="200px">
+ <img src="images/tv2.jpeg" data-toggle="modal" data-target="#pic-gallery" />
   </div>
 
   <div class="tab-pane fade" id="Books">
-    <img src="images/tv3.jpeg" data-toggle="modal" data-target="#pic-gallery" height="200px">
+    <img src="images/tv3.jpeg" data-toggle="modal" data-target="#pic-gallery" />
   </div>
 
   <div class="tab-pane fade" id="TV">
-   <img src="images/tv4.jpeg" data-toggle="modal" data-target="#pic-gallery" height="200px">
+   <img src="images/tv4.jpeg" data-toggle="modal" data-target="#pic-gallery" />
   </div>
 
 </div>
@@ -65,11 +65,11 @@
     <a data-toggle="tab" href="#TV"><img src="images/tv4.jpeg" height="40px"></a>
 </div>
 
-<img src="images/like-button.png" width="33px" style="position: absolute;top:76px;right: 2%">
+<img src="images/like-button.png" class="like-button" />
 
-<p style="font-size: 20px;font-family: 'Montserrat', sans-serif;"> &nbsp;Micromax 81cm (32) LED TV</p>
-<p style="font-size: 16px;font-family: 'Montserrat', sans-serif;"> &nbsp;(32T8280HD /32T8260HD)</p>
-<div class="row text-center" style="font-size: 12px;font-family: 'Josefin Sans', sans-serif;">
+<p class="product-name"> &nbsp;Micromax 81cm (32) LED TV</p>
+<p class="product-code"> &nbsp;(32T8280HD /32T8260HD)</p>
+<div class="row text-center delivery-charges">
   <div class="col-xs-6">
     SHOP Genuine
   </div>
@@ -78,29 +78,29 @@
   </div>
 </div>
   
-<div class="row text-center" style="margin: 0;font-family: 'Lato', sans-serif;">
+<div class="row text-center reviews-specs-buttons">
   <div data-toggle="modal" data-target="#reviews" class="prod_row col-xs-6">
     <p><span class="glyphicon glyphicon-comment"> </span> Reviews</p>
   </div>
-  <div class="prod_row col-xs-6" data-toggle="modal" data-target="#specs" style="background: #a3715e;">
+  <div class="prod_row col-xs-6 specs-button" data-toggle="modal" data-target="#specs">
     <p><span class="glyphicon glyphicon-th-list"></span> Specifications</p>
+  </div>
 </div>
+<div class="text-center product-rating">
+  <p class="total_rate_main">Rating &nbsp;<span>4.14 <span class="glyphicon glyphicon-star-empty"></span></span> 1511 Ratings & 386 reviews</p>
 </div>
-<div class="text-center" style="margin: 10px;font-size: 12px;">
-  <p class="total_rate_main" >Rating &nbsp;<span style="background-color:#28b313;color: white;font-size: 10px;padding: 1px 7px 1px 7px">4.14 <span class="glyphicon glyphicon-star-empty"></span></span> 1511 Ratings & 386 reviews</p>
-</div>
-<div class="w3-display-container container-fluid" style="font-size: 18px;margin-top: 0">
-  <div class="w3-display-topleft w3-container"><span style="font-size:28vh;line-height:0.7em;opacity:0.1">❝</span></div>
-  <div class="w3-display-bottomright w3-container" style="bottom:-19px"><span style="font-size:28vh;line-height:0.6em;opacity:0.1;float:right">&#10078;</span></div>
+<div class="w3-display-container container-fluid product-description">
+  <div class="w3-display-topleft w3-container"><span>❝</span></div>
+  <div class="w3-display-bottomright w3-container"><span>&#10078;</span></div>
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua. 
 </div>
 
-<div class="modal fade" id="specs" role="dialog" style="position: fixed;">
+<div class="modal fade" id="specs" role="dialog">
     <div class="modal-dialog">
-        <div class="modal-content" style="padding: 0;background:#fff;">
-            <div class="modal-header text-center" style="background:#fff;height: 8vh;">
-            <h3 style="margin:2px ">Specifications
+        <div class="modal-content">
+            <div class="modal-header text-center">
+            <h3>Specifications
                 <button type="button" class="close btn btn-basic" data-dismiss="modal">&times;</button>
             </h3>
             </div>
@@ -236,7 +236,7 @@
             </a>
           </div>
         </div>  
-            <div class="modal-footer" style="padding:10px">
+            <div class="modal-footer">
              <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
               <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -249,64 +249,65 @@
 
 <div class="modal fade" id="reviews" role="dialog">
   <div class="modal-dialog">
-    <div class="modal-content" style="padding: 0;background:#fff;">
-      <div class="modal-header text-center" style="background:#fff">
-      <h5 style="margin:2px ">RATING & REVIEWS
+    <div class="modal-content">
+      <div class="modal-header text-center">
+      <h5>RATING & REVIEWS
           <button type="button" class="close btn btn-basic" data-dismiss="modal">&times;</button>
       </h5>
       </div>
       <div class="modal-body text-center" >
           <div class="row">
             <div class="col-xs-5">
-              <h4 id="final_rate" >4.14 <span class="glyphicon glyphicon-star"></span></h4>
-              <p id="total_rate" style="font-size: 12px">1511 Ratings and 386 Reviews</p>
+              <h4 id="final_rate">4.14 <span class="glyphicon glyphicon-star"></span></h4>
+              <p id="total_rate">1511 Ratings and 386 Reviews</p>
             </div>
             <div class="col-xs-2">
               <hr class="fhr">
             </div>
-            <div class="col-xs-5" >
+            <div class="col-xs-5 rating-stars">
               <div>
-              <p style="font-size: 10px;float: left">5 <span class="glyphicon glyphicon-star"> </span></p>
-              <div class="rating"> 
-              <div style="width: 100%;background:#02e202;height:2px"> </div>
+                <p>5 <span class="glyphicon glyphicon-star"> </span></p>
+                <div class="rating rate-5"> 
+                  <div> </div>
+                </div>
+                <span id="rate_5"> 760</span>
               </div>
-              <span id="rate_5" style="font-size: 10px;float:right;"> 760</span>
-              </div>
-              <div style="margin-top: 14px">
-              <p style="font-size: 10px;float: left">4 <span class="glyphicon glyphicon-star"> </span></p>
-              <div class="rating"> 
-              <div style="width: calc(453%/7.6);background:#34e202;height:2px"> </div>
-              </div>
-              <span id="rate_4" style="font-size: 10px;float: right;"> 453</span>
-              </div>
-              
-              <div style="margin-top: 14px">
-              <p style="font-size: 10px;float: left">3 <span class="glyphicon glyphicon-star"> </span></p>
-              <div class="rating"> 
-              <div style="width: calc(152%/7.6);background:#9ce202;height:2px"> </div>
-              </div>
-              <span id="rate_3" style="font-size: 10px;float: right;"> 152</span>
+
+              <div>
+                <p>4 <span class="glyphicon glyphicon-star"> </span></p>
+                <div class="rating rate-4"> 
+                  <div> </div>
+                </div>
+                <span id="rate_4"> 453</span>
               </div>
               
-              <div style="margin-top: 14px">
-              <p style="font-size: 10px;float: left">2 <span class="glyphicon glyphicon-star"> </span></p>
-              <div class="rating"> 
-              <div style="width: calc(37%/7.6);background:#e2e002;height:2px"> </div>
+              <div>
+                <p>3 <span class="glyphicon glyphicon-star"> </span></p>
+                  <div class="rating rate-3"> 
+                    <div> </div>
+                  </div>
+                <span id="rate_3"> 152</span>
               </div>
-              <span id="rate_2" style="font-size: 10px;float: right;">37</span>
+              
+              <div>
+                <p>2 <span class="glyphicon glyphicon-star"> </span></p>
+                  <div class="rating rate-2"> 
+                    <div> </div>
+                  </div>
+                <span id="rate_2">37</span>
               </div>             
               
-              <div style="margin-top: 14px">
-              <p style="font-size: 10px;float: left">1 <span class="glyphicon glyphicon-star"> </span></p>
-              <div class="rating"> 
-              <div style="width: calc(109%/7.6);background:#ff0000;height:2px"> </div>
-              </div>
-              <span id="rate_1" style="font-size: 10px;float: right;"> 109</span>
+              <div>
+                <p>1 <span class="glyphicon glyphicon-star"> </span></p>
+                  <div class="rating rate-1"> 
+                    <div> </div>
+                  </div>
+                <span id="rate_1"> 109</span>
               </div>
 
             </div>
           </div>
-    <center style="margin-top: 5px;">
+    <center>
       <button class="btn rate_btn" >Rate this product</button>
         <div class="rate_the_product">
           <div class="stars">
@@ -330,25 +331,25 @@
     </center>
       <br>
       <div class="review_list">
-        <div class="text-left" style="font-size: 12.5px">
-         <span style="background-color:#00bd00;color: #333333;font-size: 10px;padding: 1px 7px 1px 7px">5 <span class="glyphicon glyphicon-star"></span></span><br>
-         <p style="border-width: 0;color: #040404;">first I want to tell as usual flipkart delivery service is so fast on next day delivery.Its first time when I go with micromax led tv, and the tv is so much good.screen quality is good, sounds good,clear and noise reduction sound, low battery consumption usage, screen clarity and color is beautiful,really a great experience to having it.satisfied now...one more thing it's packaging is so good.
+        <div class="text-left">
+         <span>5 <span class="glyphicon glyphicon-star"></span></span><br />
+         <p>first I want to tell as usual flipkart delivery service is so fast on next day delivery.Its first time when I go with micromax led tv, and the tv is so much good.screen quality is good, sounds good,clear and noise reduction sound, low battery consumption usage, screen clarity and color is beautiful,really a great experience to having it.satisfied now...one more thing it's packaging is so good.
          </p>
-         <hr style="margin:10px 0">
+         <hr />
         </div>
       </div>
-      </div>
+    </div>
 
-      <div class="modal-footer" style="padding:2px">
+      <div class="modal-footer">
       </div>
     </div>
   </div>
 </div>
 <div class="modal modal-lg fade" id="pic-gallery" role="dialog" >
-    <div class="modal-dialog" style="position: relative;top:30%">
-        <div class="modal-content" style="background-color:rgba(0,0,0,0);border:none;box-shadow: none;background:#fff  ">
+    <div class="modal-dialog">
+        <div class="modal-content">
             <div class="modal-body text-center">
-            <button class="close btn" style="font-size:15px;padding:3px 6px;opacity:1;margin-top: -9px;background:#fff;border-radius: 50%" data-dismiss="modal">&times;</button>
+            <button class="close btn" data-dismiss="modal">&times;</button>
                 <div class="text-center tab-content">
                   <div class="active in modal-tab tab-pane fade" id="Offers1">
                   <img src="images/tv.jpeg" height="200px">
@@ -370,7 +371,7 @@
                    <img src="images/tv4.jpeg" height="200px">
                   </div>
                 </div>
-                <div class="scroll1" style="margin-top: 20px">
+                <div class="scroll1">
                     <a class="active" data-toggle="tab" href="#Offers1"><img src="images/tv.jpeg" height="40px"></a>
                     <a data-toggle="tab" href="#fashion1"><img src="images/tv1.jpeg" height="40px"></a>
                     <a data-toggle="tab" href="#elec1"><img src="images/tv2.jpeg" height="40px"></a>
@@ -381,25 +382,25 @@
         </div>
     </div>
 </div>
-<div class="navbar-fixed-bottom" >
-  <div class="btn-group btn-group-justified" id="footer-1" style="background:#e85934;color:white;"> 
+<div class="navbar-fixed-bottom">
+  <div class="btn-group btn-group-justified" id="footer-1"> 
     <div class="btn-group text-center ">  
-      <button class="btn btn-bottom add-to-cart" style="background:#f7ae1d;">Add to Cart</button>
+      <button class="btn btn-bottom add-to-cart">Add to Cart</button>
     </div>
-      <a class="btn btn-bottom price"><b>₹25539/- </b><p style="font-size: 12px;color: black"><strike style="color: white" >29899</strike> &nbsp;40% off</p></a>
+      <a class="btn btn-bottom price"><b>₹25539/- </b><p><strike>29899</strike> &nbsp;40% off</p></a>
     <div class="btn-group text-center ">  
-      <a href="cart.html"><button class="btn btn-bottom" style="background:#319abd;color: white">Buy Now</button></a>
+      <a href="cart.html"><button class="btn btn-bottom cart">Buy Now</button></a>
     </div>  
   </div>  
 </div>
-<div class="navbar-fixed-bottom"  id="footer-2" style="background:#f7ae1d;box-shadow:0px 7px 12px 3px black;color:white">
+<div class="navbar-fixed-bottom"  id="footer-2">
   <div class="btn-group btn-group-justified" >
-    <div class="btn-group text-center" style="line-height: 1em">
+    <div class="btn-group text-center">
         <div class="row">
-          <div class="col-xs-6" style="padding-right: 0px">
-            <span class="glyphicon glyphicon-shopping-cart" style="font-size: 30px"></span>
+          <div class="col-xs-6">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
           </div>
-          <div class="col-xs-6" style="font-size: 13px;padding-left: 0px">
+          <div class="col-xs-6">
             2 item(s) in cart
           </div>
         </div>
@@ -409,7 +410,7 @@
       <b>₹25849/-</b>
     </div>  
     <div class="btn-group text-center ">  
-      <a href="cart.html"><button class="btn btn-info btn-bottom" style="background:#319abd;padding:7px;width: 90%;border-radius: 7%">PROCEED</button></a>
+      <a href="cart.html"><button class="btn btn-info btn-bottom btn-proceed">PROCEED</button></a>
     </div>  
   </div>
 </div>
@@ -491,7 +492,7 @@
         else if(star === '1'){
           var color = "#ea0505" ;
         }
-        $(".review_list").append(`<div class="text-left" style="font-size: 12.5px"> <span style="background-color:${color};color: #333333;font-size: 10px;padding: 1px 7px 1px 7px">${star}<span class="glyphicon glyphicon-star"></span></span><p style="color:#404040">${review}</p><hr style="margin:10px 0"></div>`);
+        $(".review_list").append(`<div class="text-left"> <span>${star}<span class="glyphicon glyphicon-star"></span></span><p>${review}</p><hr /></div>`);
 
         $(".review_text").val("");
         number_rate[3]++;
@@ -507,7 +508,7 @@
         avg = tot/parseInt(number_rate[0]);
         $("#final_rate").html(`${avg.toFixed(2)} <span class="glyphicon glyphicon-star"></span>`);
         $("#total_rate").html(`${number_rate[0]} ratings and ${number_rate[3]} reviews`);
-        $(".total_rate_main").html(`Rating &nbsp;<span style="background-color:#28b313;color: white;font-size: 10px;padding: 1px 7px 1px 7px">${avg.toFixed(2)} <span class="glyphicon glyphicon-star-empty"></span></span> ${number_rate[0]} Ratings & ${number_rate[3]} reviews`);
+        $(".total_rate_main").html(`Rating &nbsp;<span>${avg.toFixed(2)} <span class="glyphicon glyphicon-star-empty"></span></span> ${number_rate[0]} Ratings & ${number_rate[3]} reviews`);
         
         $(".rate_the_product").hide(350);
         $(".rate_btn").delay(350).html("Rate this product");
